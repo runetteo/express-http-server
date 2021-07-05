@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "4ae03ef4-981a-4ae5-8437-fb6f467516a6",
+      "username": "PaulJ",
+      "emailAddress": "PaulJ@magenic.com"
+    },
+    {
+      "id": "b03fef90-e8c5-4620-8273-70947c9095c0",
+      "username": "MilyO",
+      "emailAddress": "MilyO@magenic.com"
+    },
+    {
+      "id": "e28b8532-be77-41e6-84a1-b41a65118f8d",
+      "username": "ChuckN",
+      "emailAddress": "gmail@chucknorris.com"
+    }
+  ]
+}

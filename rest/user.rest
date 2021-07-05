@@ -1,0 +1,108 @@
+### Get All
+GET http://localhost:4000/users
+
+### Get by username
+GET http://localhost:4000/users/user/chuckn
+
+### Get by username (non-existing user). Should fail.
+GET http://localhost:4000/users/user/random
+
+### Get by email
+GET http://localhost:4000/users/user/email/gmail@chucknorris.com
+
+### Get by email (non-existing user). Should fail.
+GET http://localhost:4000/users/user/email/chucknorris@gmail.com
+
+
+
+### Add user with invalid email address. Should fail.
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{ 
+	"username": "DavidB", 
+	"emailAddress": "davidbeckam@gmail"
+}
+
+### Add user with existing username. Should fail.
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{ 
+	"username": "ChuckN", 
+	"emailAddress": "yahoo@chucknorris.com"
+}
+
+### Add user with existing email address. Should fail.
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{ 
+	"username": "DavidB", 
+	"emailAddress": "gmail@chucknorris.com"
+}
+
+### Add user using a valid request
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{ 
+	"username": "DavidB", 
+	"emailAddress": "david.beckham@gmail.com"
+}
+
+
+
+
+### Update user using a non-existing username. Should fail.
+PUT http://localhost:4000/users/user/dvddb
+Content-Type: application/json
+
+{ 
+	"emailAddress": "david.beckham@gmail.com"
+}
+
+### Update user with username on request body. Should fail.
+PUT http://localhost:4000/users/user/davidb
+Content-Type: application/json
+
+{ 
+    "username": "david",
+	"emailAddress": "david.beckham@gmail.com"
+}
+
+### Update user with invalid email. Should fail.
+PUT http://localhost:4000/users/user/davidb
+Content-Type: application/json
+
+{ 
+	"emailAddress": "gmail.com"
+}
+
+### Update user with existing email. Should fail.
+PUT http://localhost:4000/users/user/davidb
+Content-Type: application/json
+
+{ 
+	"emailAddress": "gmail@chucknorris.com"
+}
+
+### Update user with valid request
+PUT http://localhost:4000/users/user/davidb
+Content-Type: application/json
+
+{ 
+	"emailAddress": "davidbeckham@gmail.com"
+}
+
+### Check users
+GET http://localhost:4000/users
+
+### Delete non-existing user. Should fail.
+DELETE http://localhost:4000/users/user/random
+
+### Delete user
+DELETE http://localhost:4000/users/user/davidb
+
+### Check users
+GET http://localhost:4000/users
